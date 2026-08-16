@@ -6,5 +6,5 @@ import { AlertsModule } from './alerts/alerts.module';
   controllers: [],
   providers: [],
 })
-export class AppModule {}
+export class AppModule { }
 
