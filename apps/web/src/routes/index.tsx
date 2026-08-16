@@ -55,24 +55,6 @@ function DashboardPage() {
               Monitor and triage active signals across production services.
             </p>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="mr-2 hidden items-center gap-2 text-[11px] text-[var(--muted-foreground)] sm:flex">
-              <span className="status-dot status-dot--live" /> All systems
-              reporting
-            </div>
-            <span className="hidden text-[11px] text-[var(--muted-foreground)] sm:inline">
-              Last updated just now
-            </span>
-            {/* <Button
-              variant="outline"
-              size="sm"
-              onClick={() => refetch()}
-              disabled={isRefetching}
-            >
-              <RefreshCw className={isRefetching ? 'animate-spin' : ''} />
-              {isRefetching ? 'Syncing' : 'Sync data'}
-            </Button> */}
-          </div>
         </div>
 
         <section className="mb-6 grid border-y border-[var(--border)] bg-[var(--surface)] sm:grid-cols-2 lg:grid-cols-4">
@@ -110,9 +92,6 @@ function DashboardPage() {
               {alerts.length} records
             </span>
           </div>
-          {/* <div className="hidden items-center gap-1.5 text-[10px] text-[var(--muted-foreground)] sm:flex">
-            <Command className="h-3 w-3" /> Click a row to inspect
-          </div> */}
         </div>
         <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.45fr)_minmax(360px,.85fr)]">
           <AlertsTable

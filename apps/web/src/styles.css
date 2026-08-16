@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+:root {
+  --background: #ffffff;
+  --foreground: #14213d;
+  --surface: #ffffff;
+  --surface-muted: #eef3f9;
+  --surface-raised: #f7faff;
+  --border: #d7e0eb;
+  --border-strong: #b8c6d8;
+  --muted-foreground: #526174;
+  --primary: #1d4ed8;
+  --primary-foreground: #ffffff;
+  --primary-hover: #1e3a8a;
+  --accent: #2f6f73;
+  --ring: #60a5fa;
+  --danger: #dc2626;
+  --danger-soft: #fef2f2;
+  --danger-text: #b91c1c;
+  --warning: #ea8a00;
+  --warning-soft: #fff7e6;
+  --warning-text: #b45309;
+  --medium: #d97706;
+  --medium-soft: #fff8e1;
+  --medium-text: #a16207;
+  --success: #16a34a;
+  --success-soft: #ecfdf3;
+  --success-text: #15803d;
+  --info: #2563eb;
+  --info-soft: #eff6ff;
+  --info-text: #1d4ed8;
+  --radius: 0.25rem;
+}
+
+.dark {
+  --background: #0b1220;
+  --foreground: #f1f5ff;
+  --surface: #111c30;
+  --surface-muted: #1b2a43;
+  --surface-raised: #15233a;
+  --border: #2d4160;
+  --border-strong: #496181;
+  --muted-foreground: #a9b8cc;
+  --primary: #60a5fa;
+  --primary-foreground: #ffffff;
+  --primary-hover: #3b82f6;
+  --accent: #6faeb0;
+  --ring: #93c5fd;
+  --danger: #f87171;
+  --danger-soft: #451a1a;
+  --danger-text: #fecaca;
+  --warning: #fbbf24;
+  --warning-soft: #422006;
+  --warning-text: #fde68a;
+  --medium: #f59e0b;
+  --medium-soft: #3b2a0b;
+  --medium-text: #fcd34d;
+  --success: #4ade80;
+  --success-soft: #052e16;
+  --success-text: #bbf7d0;
+  --info: #60a5fa;
+  --info-soft: #172554;
+  --info-text: #bfdbfe;
+}
+
+@theme inline {
+  --font-sans:
+    'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#app {
+  min-height: 100%;
+}
+body {
+  margin: 0;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+::selection {
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border: 2px solid var(--background);
+  border-radius: 4px;
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+}
+
+.ops-shell {
+  min-height: 100vh;
+  background: var(--background);
+}
+.ops-main {
+  min-width: 0;
+}
+.eyebrow {
+  color: var(--muted-foreground);
+  font: 600 10px/1 var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.mono {
+  font-family: var(--font-mono);
+}
+.section-rule {
+  border-top: 1px solid var(--border);
+}
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  flex: 0 0 auto;
+}
+.status-dot--live {
+  background: var(--success);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--success) 14%, transparent);
+}
+.status-dot--critical {
+  background: var(--danger);
+}
+.status-dot--warning {
+  background: var(--warning);
+}
+.status-dot--ok {
+  background: var(--success);
+}
